@@ -1,0 +1,24 @@
+<!-- 
+<div class="card">
+    <h1>Add To Cart</h1>
+    <img src="../../assets/cup.jpg" alt="Coffee Cup" style="width:100%">
+    <div>Coffee Mug: <span class="price">Rs: {{ mugPrice }}</span></div>
+    <h2>Cart Items: {{ cartItems }}</h2>
+    <button class="buttonc button11"  (click)="addToCart()" [disabled]="!isBtnAddDisabled" >Add To Cart</button>
+    <button class="buttonc button11"  (click)="removeFromCart()" [disabled]="!isBtnRemoveDisabled">Remove Cart</button>
+</div> -->
+<div class="container">
+    <h3>Parent to child data transfer Componet: {{ pname }}</h3>
+    <h5>Data from Parent 1: {{prodName1}}</h5>
+    <h5>Data from Parent 2: {{resultData}}</h5>
+    <button class="btn btn-primary" (click)="sendDataToParent()">Send Data to Parent</button>
+    <br>
+    <button class="btn btn-primary" (click)="sentDataToParent()">Send Data to Parent</button>
+    <br>
+        <label for="name">Name:</label>
+        <input type="text"  class="form-control" [(ngModel)]="userName"  placeholder="Enter Your Name" ><br>
+        <div >{{data}}</div><br>
+      <button type="submit" class="btn btn-success" [disabled]="userName.length < 4" (click)="onUsername()">Greet</button> &nbsp;
+      <button  class="btn btn-danger" [disabled]="userName.length < 1" (click)="onClear()">Clear</button>
+  </div>
+  

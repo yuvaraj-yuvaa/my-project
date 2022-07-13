@@ -1,0 +1,37 @@
+<div class="card">
+    <h1>Add Products</h1>
+    <div>Product Name:  <input class="productfiled" [(ngModel)]="productName" placeholder="Please enter product name" type="text" /> </div>
+    <p>{{ productName }}</p>
+    <div>
+        <button class="addproductbtn" [disabled]="productName.length < 3" (click)="onAddProduct()">Add Product</button>
+    </div>
+    <p *ngIf="!showToggle">Toggle Text</p>
+    <div class="listproducts">
+        <ul>
+            <li *ngFor="let product of productList; index as i; first as f; last as l; odd as o; even as e;" [ngClass]="{'pcolor': i > 6 }" [ngStyle]="{'color': i > 9 ? 'yellow' : 'black' }"> {{ i + 1 }} {{product}}  </li>
+        </ul>
+    </div>
+    <!-- <h2>NgSwitch Example</h2>
+        <div>
+            <button class="btn btn-primary" (click)="viewmode='productDetails'" [ngClass]="{'active': viewmode === 'productDetails'}">Product Detals</button>
+            <button class="btn btn-warning"(click)="viewmode='productFeature'" [ngClass]="{'active': viewmode === 'productFeature'}">Product Feature</button>
+            <div class="row" [ngSwitch]="viewmode">
+                <div class="col-md-12" *ngSwitchCase="'productDetails'">
+                    <h3>Product Details:</h3>
+                    <p>Name: Car</p>
+                    <p>Color: Blue</p>
+                    <p>Brand: BMW</p>
+                    <p>Place: Chennai</p>
+                </div>
+                <div class="col-md-12" *ngSwitchCase="'productFeature'">
+                    <h3>Product Feature: </h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                </div>
+                <div class="col-md-12" *ngSwitchDefault>
+                    <p>No Details are Present!!!</p>
+                </div>
+            </div>
+        </div> -->
+</div>
+
+<app-addtocart [pname]="productName" [prodName1]="pname1" [prodName2]="pname2" (sendData)="receiveData($event)" (customEvent)="getDataFromChild($event)"></app-addtocart>
